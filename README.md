@@ -17,4 +17,4 @@ Customers can also reserve dinning in restaurants. With our new app customer can
 The app also allows users customers to book different fitness and entertainment choices which Hotel Green Lantern provides. These Includes Swimming pools, fully equipped gymnasium, and tennis courts. Customers can reserve any activity within next to 5 to 7 days and select a session time of their choice.
 
 
-![alt text](https://github.com/kavindamain99/GreenLanternRestaurants/blob/master/MainView.png?raw=true)
+![alt text](https://github.com/kavindamain99/GreenLantern/blob/master/MainView.png?raw=true)
