@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.greenlantern" >
+    package="com.example.greenlantern">
 
     <application
         android:allowBackup="true"
@@ -9,12 +9,14 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.GreenLantern" >
+        android:theme="@style/Theme.GreenLantern">
+        <activity
+            android:name=".table.table_form_2_single"
+            android:exported="true" />
         <activity
             android:name=".table.table_form_single"
             android:exported="true"
-            android:parentActivityName=".Table"
-            />
+            android:parentActivityName=".Table" />
         <activity
             android:name=".Booking"
             android:exported="true" />
@@ -30,22 +32,15 @@
         <activity
             android:name=".Room"
             android:launchMode="singleTask" />
-
-
         <activity
             android:name=".MainActivity"
-            android:launchMode="singleTask" >
+            android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
-
-
-
     </application>
 
 </manifest>

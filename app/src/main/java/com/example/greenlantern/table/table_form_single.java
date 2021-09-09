@@ -75,6 +75,16 @@ public class table_form_single extends AppCompatActivity {
             et_total.setText("Rs.2400.00");
         }
 
+
+
+
+    }
+
+    public void nextPage(View view){
+
+        Intent intentnext = new Intent(this, table_form_2_single.class);
+        intentnext.putExtra("table",view.getId());
+        startActivity(intentnext);
     }
 
 
@@ -103,6 +113,8 @@ public class table_form_single extends AppCompatActivity {
         }
 
     }
+
+
 
 
     @Override
