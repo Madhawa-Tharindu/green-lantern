@@ -60,6 +60,7 @@ public class table_form_single extends AppCompatActivity {
         tv_amount_value = findViewById(R.id.tv_amount_value);
         et_total = findViewById(R.id.et_total);
 
+        //get data by intent
         Intent intent = getIntent();
         int table_id = intent.getIntExtra("table",0);
 
