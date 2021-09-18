@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1036255147700",
+    "project_id": "greenlantern-8e0ee",
+    "storage_bucket": "greenlantern-8e0ee.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1036255147700:android:9125f48040e92383c009e1",
+        "android_client_info": {
+          "package_name": "com.example.greenlantern"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1036255147700-adc6hqek2hfvi5lqpf4sgfpvk75vn84m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5xfa561nV8Y0V6-kg2vb_Ywa1O8ktGVw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1036255147700-adc6hqek2hfvi5lqpf4sgfpvk75vn84m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
