@@ -2,10 +2,14 @@ package com.example.greenlantern.table;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
@@ -29,6 +33,11 @@ public class table_form_single extends AppCompatActivity {
     TextView tv_amount_value;
     TextView tv_unit_value;
     EditText et_total;
+    EditText pt_for;
+    EditText pt_phone;
+    Button next;
+
+    String forName;
 
 
     @Override
@@ -41,6 +50,12 @@ public class table_form_single extends AppCompatActivity {
         drawerLayout = findViewById(R.id.drawer_layout);
         btMenu = findViewById(R.id.bt_menu);
         recyclerView = findViewById(R.id.recycle_view);
+        pt_for=findViewById(R.id.pt_for);
+        pt_phone=findViewById(R.id.pt_Phone);
+        next=findViewById(R.id.btn_next);
+
+        //set values
+        forName = pt_for.getText().toString();
 
         //set layout manager
 
@@ -107,16 +122,43 @@ public class table_form_single extends AppCompatActivity {
             et_total.setText("Rs.4800.00");
         }
 
-
-
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+            //form validation
+                if(TextUtils.isEmpty(pt_for.getText().toString())){
+                    Toast.makeText(getApplicationContext(),"For Can not be empty!",Toast.LENGTH_SHORT).show();
+            }
+            else if(TextUtils.isEmpty(pt_phone.getText().toString())){
+                    Toast.makeText(getApplicationContext(),"Phone Number Can not be empty!",Toast.LENGTH_SHORT).show();
+                }
+                else if(pt_for.getText().toString().matches(".*\\d.*")){
+                    Toast.makeText(getApplicationContext(),"Name Can not be A number !",Toast.LENGTH_SHORT).show();
+                }
+                else if(pt_for.getText().toString().length()>10){
+                    Toast.makeText(getApplicationContext(),"Name Must be 1 to 10 Character !",Toast.LENGTH_SHORT).show();
+                }
+                else if(pt_phone.getText().toString().length()!=10){
+                    Toast.makeText(getApplicationContext(),"Phone Number Must be 10 Numbers !",Toast.LENGTH_SHORT).show();
+                }
+            else{
+                    nextPage(view);
+                }
+            }
+        });
 
     }
 
     public void nextPage(View view){
 
-        Intent intentnext = new Intent(this, table_form_2_single.class);
-        intentnext.putExtra("table",view.getId());
-        startActivity(intentnext);
+
+
+
+            Intent intentnext = new Intent(this, table_form_2_single.class);
+            intentnext.putExtra("table",view.getId());
+            startActivity(intentnext);
+
+
     }
 
 
