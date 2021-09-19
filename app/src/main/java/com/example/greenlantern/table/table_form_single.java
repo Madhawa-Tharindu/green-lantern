@@ -76,6 +76,37 @@ public class table_form_single extends AppCompatActivity {
             et_total.setText("Rs.2400.00");
         }
 
+        else if(table_id==R.id.tb003){
+            tv_table_id.setText("TB003");
+            tv_amount_value.setText("2");
+            et_total.setText("Rs.2400.00");
+        }
+        else if(table_id==R.id.tb002){
+            tv_table_id.setText("TB002");
+            tv_amount_value.setText("2");
+            et_total.setText("Rs.2400.00");
+        }
+        else if(table_id==R.id.tb005){
+            tv_table_id.setText("TB005");
+            tv_amount_value.setText("2");
+            et_total.setText("Rs.2400.00");
+        }
+        else if(table_id==R.id.tb006){
+            tv_table_id.setText("TB006");
+            tv_amount_value.setText("4");
+            et_total.setText("Rs.4800.00");
+        }
+        else if(table_id==R.id.tb007){
+            tv_table_id.setText("TB007");
+            tv_amount_value.setText("4");
+            et_total.setText("Rs.4800.00");
+        }
+        else if(table_id==R.id.tb008){
+            tv_table_id.setText("TB008");
+            tv_amount_value.setText("4");
+            et_total.setText("Rs.4800.00");
+        }
+
 
 
 
@@ -94,10 +125,15 @@ public class table_form_single extends AppCompatActivity {
         et_total = findViewById(R.id.et_total);
         Intent intent = getIntent();
         int table_id = intent.getIntExtra("table",0);
-        if(table_id==R.id.tb001||table_id==R.id.tb004) {
+        if(table_id==R.id.tb001||table_id==R.id.tb002||table_id==R.id.tb003||table_id==R.id.tb004||table_id==R.id.tb005) {
             tv_amount_value.setText("1");
             tv_unit_value.setText("Rs.1200x1");
             et_total.setText("Rs.1200.00");
+        }
+        else if(table_id==R.id.tb006||table_id==R.id.tb007||table_id==R.id.tb008){
+            tv_amount_value.setText("3");
+            tv_unit_value.setText("Rs.1200x3");
+            et_total.setText("Rs.3600.00");
         }
 
     }
@@ -107,12 +143,21 @@ public class table_form_single extends AppCompatActivity {
         et_total = findViewById(R.id.et_total);
         Intent intent = getIntent();
         int table_id = intent.getIntExtra("table",0);
-        if(table_id==R.id.tb001||table_id==R.id.tb004) {
+        if(table_id==R.id.tb001||table_id==R.id.tb002||table_id==R.id.tb003||table_id==R.id.tb004||table_id==R.id.tb005) {
             tv_amount_value.setText("2");
             tv_unit_value.setText("Rs.1200x2");
             et_total.setText("Rs.2400.00");
         }
+        else if(table_id==R.id.tb006||table_id==R.id.tb007||table_id==R.id.tb008){
+            tv_amount_value.setText("4");
+            tv_unit_value.setText("Rs.1200x4");
+            et_total.setText("Rs.4800.00");
+        }
 
+    }
+
+    public void back(View view){
+        finish();
     }
 
 

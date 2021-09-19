@@ -78,7 +78,9 @@ public class table_form_2_single extends AppCompatActivity {
 
 
 
-
+    public void back(View view){
+        finish();
+    }
 
 
 
