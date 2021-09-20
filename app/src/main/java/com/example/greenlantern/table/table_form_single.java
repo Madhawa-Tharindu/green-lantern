@@ -135,12 +135,12 @@ public class table_form_single extends AppCompatActivity {
                 else if(pt_for.getText().toString().matches(".*\\d.*")){
                     Toast.makeText(getApplicationContext(),"Name Can not be A number !",Toast.LENGTH_SHORT).show();
                 }
-                else if(pt_for.getText().toString().length()>10){
+                /*else if(pt_for.getText().toString().length()>10){
                     Toast.makeText(getApplicationContext(),"Name Must be 1 to 10 Character !",Toast.LENGTH_SHORT).show();
                 }
                 else if(pt_phone.getText().toString().length()!=10){
                     Toast.makeText(getApplicationContext(),"Phone Number Must be 10 Numbers !",Toast.LENGTH_SHORT).show();
-                }
+                }*/
             else{
                     nextPage(view);
                 }
@@ -152,10 +152,12 @@ public class table_form_single extends AppCompatActivity {
     public void nextPage(View view){
 
 
-
-
             Intent intentnext = new Intent(this, table_form_2_single.class);
             intentnext.putExtra("table",view.getId());
+            intentnext.putExtra("for",pt_for.getText().toString());
+            intentnext.putExtra("phone",pt_phone.getText().toString());
+            intentnext.putExtra("total",et_total.getText().toString());
+            intentnext.putExtra("amount",tv_amount_value.getText().toString());
             startActivity(intentnext);
 
 
