@@ -9,6 +9,7 @@ import android.widget.CalendarView;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
@@ -35,6 +36,8 @@ public class table_form_2_single extends AppCompatActivity {
     String curYear;
     String curDate;
     String curMonth;
+    String date;
+    String userId;
 
 
 
@@ -51,6 +54,8 @@ public class table_form_2_single extends AppCompatActivity {
         recyclerView = findViewById(R.id.recycle_view);
         reserve = findViewById(R.id.btn_reserve);
         final Calendar calendar = Calendar.getInstance();
+
+        DAOETable dao=new DAOETable();
 
         //pickup date
         calendarView = findViewById(R.id.calendarView);
@@ -71,10 +76,13 @@ public class table_form_2_single extends AppCompatActivity {
 
         Intent intent = getIntent();
         int table_id = intent.getIntExtra("table",0);
+        String table = String.valueOf(table_id);
         String for_name = intent.getStringExtra("for");
         String phone_num = intent.getStringExtra("phone");
         String total = intent.getStringExtra("total");
         String amount = intent.getStringExtra("amount");
+        String tableId=intent.getStringExtra("tableId");
+        userId =intent.getStringExtra("userId");
 
 
         //pickup date
@@ -90,6 +98,9 @@ public class table_form_2_single extends AppCompatActivity {
                 curYear = String.valueOf(year);
                 curDate = String.valueOf(dayOfMonth);
 
+                 date = curMonth+"-"+curDate+"-"+curYear;
+                Log.i("date",date);
+                Log.i("table",tableId);
             }
         });
 
@@ -101,9 +112,17 @@ public class table_form_2_single extends AppCompatActivity {
                 Log.i("name",phone_num);
                 Log.i("name",amount);
                 Log.i("name",total);
-                Log.i("date",curDate);
-                Log.i("date",curYear);
-                Log.i("date",curMonth);
+
+                Log.i("table",table);
+
+
+                //insert into database
+                TableD table = new TableD(userId,tableId,for_name,phone_num,total,amount,date);
+                dao.insert(table).addOnSuccessListener(suc->{
+                    Toast.makeText(getApplicationContext(),"Record is inserted",Toast.LENGTH_SHORT).show();
+                }).addOnFailureListener(er->{
+                    Toast.makeText(getApplicationContext(),""+er.getMessage(),Toast.LENGTH_SHORT).show();
+                });
 
 
             }
