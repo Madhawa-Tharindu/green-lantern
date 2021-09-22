@@ -2,6 +2,7 @@ package com.example.greenlantern.table;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -11,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -20,6 +22,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.greenlantern.MainActivity;
 import com.example.greenlantern.MainAdapter;
 import com.example.greenlantern.R;
+import com.example.greenlantern.Table;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.Calendar;
 
@@ -30,7 +38,7 @@ public class table_form_2_single extends AppCompatActivity {
     ImageView btMenu;
     RecyclerView recyclerView;
     Button reserve;
-
+    TextView tv_validation;
     //get Date
     CalendarView calendarView;
     String curYear;
@@ -39,6 +47,10 @@ public class table_form_2_single extends AppCompatActivity {
     String date;
     String userId;
 
+    //database ref for date validation
+    DatabaseReference db;
+
+
 
 
     @Override
@@ -46,15 +58,16 @@ public class table_form_2_single extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_table_form2_single);
 
-
         //assign variable
 
         drawerLayout = findViewById(R.id.drawer_layout);
         btMenu = findViewById(R.id.bt_menu);
         recyclerView = findViewById(R.id.recycle_view);
         reserve = findViewById(R.id.btn_reserve);
+        tv_validation =findViewById(R.id.tv_validation);
         final Calendar calendar = Calendar.getInstance();
 
+        //database referrence
         DAOETable dao=new DAOETable();
 
         //pickup date
@@ -84,6 +97,10 @@ public class table_form_2_single extends AppCompatActivity {
         String tableId=intent.getStringExtra("tableId");
         userId =intent.getStringExtra("userId");
 
+        //fetch data for the date validation
+        db = FirebaseDatabase.getInstance().getReference("TableD");
+
+
 
         //pickup date
         calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
@@ -98,10 +115,35 @@ public class table_form_2_single extends AppCompatActivity {
                 curYear = String.valueOf(year);
                 curDate = String.valueOf(dayOfMonth);
 
-                 date = curMonth+"-"+curDate+"-"+curYear;
+                date = curMonth+"-"+curDate+"-"+curYear;
                 Log.i("date",date);
                 Log.i("table",tableId);
+                tv_validation.setText("Day is Yours ! Hurry up");
+
+                db.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        for(DataSnapshot dataSnapshot:snapshot.getChildren()){
+                            TableD table =dataSnapshot.getValue(TableD.class);
+                            if(table.getTableNo().equals(tableId) && table.getReservedDate().equals(date)) {
+                                Log.i("exist","date exist");
+                                tv_validation.setText("Table already Reserved");
+                            }
+                        }
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+
+
+
+
             }
+
         });
 
         reserve.setOnClickListener(new View.OnClickListener() {
@@ -128,6 +170,8 @@ public class table_form_2_single extends AppCompatActivity {
             }
         });
 
+
+
     }
 
 
@@ -135,9 +179,6 @@ public class table_form_2_single extends AppCompatActivity {
     public void back(View view){
         finish();
     }
-
-
-
 
 
     @Override

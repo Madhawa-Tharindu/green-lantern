@@ -12,6 +12,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.greenlantern.table.tableBooking;
+
 public class Booking extends AppCompatActivity {
 
     //initialize variable
@@ -47,6 +49,11 @@ public class Booking extends AppCompatActivity {
         });
 
 
+    }
+
+    public void tableBooking(View view){
+        Intent intent = new Intent(this, tableBooking.class);
+        startActivity(intent);
     }
 
     @Override

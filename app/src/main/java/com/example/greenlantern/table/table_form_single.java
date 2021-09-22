@@ -141,12 +141,13 @@ public class table_form_single extends AppCompatActivity {
                 else if(pt_for.getText().toString().matches(".*\\d.*")){
                     Toast.makeText(getApplicationContext(),"Name Can not be A number !",Toast.LENGTH_SHORT).show();
                 }
+                /*
                 else if(pt_for.getText().toString().length()>20){
                     Toast.makeText(getApplicationContext(),"Name Must be 1 to 20 Character !",Toast.LENGTH_SHORT).show();
                 }
                 else if(pt_phone.getText().toString().length()!=10){
                     Toast.makeText(getApplicationContext(),"Phone Number Must be 10 Numbers !",Toast.LENGTH_SHORT).show();
-                }
+                }*/
             else{
                     nextPage(view);
                 }

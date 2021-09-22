@@ -58,8 +58,6 @@ public class Table extends AppCompatActivity {
         intent.putExtra("tableId","TB001");
         intent.putExtra("userId",userId);
         startActivity(intent);
-
-
     }
 
 
