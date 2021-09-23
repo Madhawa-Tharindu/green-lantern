@@ -34,6 +34,10 @@ public class DAOETable {
        return databaseReference.orderByKey();
     }
 
+    public Task<Void> remove(String key)
+    {
+        return databaseReference.child(key).removeValue();
+    }
 
 
 

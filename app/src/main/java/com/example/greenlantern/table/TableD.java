@@ -1,6 +1,10 @@
 package com.example.greenlantern.table;
 
+import com.google.firebase.database.Exclude;
+
 public class TableD {
+
+    @Exclude
     private String tableNo;
     private String forName;
     private String phoneNum;
@@ -8,6 +12,7 @@ public class TableD {
     private String amount;
     private String reservedDate;
     private String userId;
+    private String key;
 
     public TableD(){}
 
@@ -76,5 +81,13 @@ public class TableD {
 
     public void setUserId(String userId) {
         this.userId = userId;
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
     }
 }

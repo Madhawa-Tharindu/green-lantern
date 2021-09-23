@@ -11,6 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GreenLantern">
         <activity
+            android:name=".table.Update_form"
+            android:exported="true" />
+        <activity
             android:name=".table.tableBooking"
             android:exported="true" />
         <activity

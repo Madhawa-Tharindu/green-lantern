@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -75,9 +76,12 @@ public class tableBooking extends AppCompatActivity {
                 for(DataSnapshot dataSnapshot:snapshot.getChildren()){
                     TableD table =dataSnapshot.getValue(TableD.class);
                     if(table.getUserId().equals("1")) {
+                        table.setKey(dataSnapshot.getKey());
                         list.add(table);
+                        Log.i("Key",table.getKey());
                     }
                 }
+
                 tableAdapter.notifyDataSetChanged();
             }
 
