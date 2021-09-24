@@ -1,10 +1,14 @@
 package com.example.greenlantern.table;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.EditText;
@@ -46,6 +50,8 @@ public class table_form_2_single extends AppCompatActivity {
     String curMonth;
     String date;
     String userId;
+
+
 
     //database ref for date validation
     DatabaseReference db;
@@ -120,7 +126,7 @@ public class table_form_2_single extends AppCompatActivity {
                 date = curMonth+"-"+curDate+"-"+curYear;
                 Log.i("date",date);
                 Log.i("table",tableId);
-                tv_validation.setText("Day is Yours ! Hurry up");
+
 
                 db.addValueEventListener(new ValueEventListener() {
                     @Override
@@ -129,8 +135,14 @@ public class table_form_2_single extends AppCompatActivity {
                             TableD table =dataSnapshot.getValue(TableD.class);
                             if(table.getTableNo().equals(tableId) && table.getReservedDate().equals(date)) {
                                 Log.i("exist","date exist");
-                                tv_validation.setText("Table already Reserved");
+                                tv_validation.setText("Table already Reserved ! Don't Worry ! It's Time To Change Your Table or Date! ");
+                                reserve.setVisibility(View.INVISIBLE);
+
+                            }else {
+                                tv_validation.setText("Day is Yours ! Hurry up ! Reserve Your Table");
+                                reserve.setVisibility(View.VISIBLE);
                             }
+
                         }
 
                     }
@@ -140,6 +152,7 @@ public class table_form_2_single extends AppCompatActivity {
 
                     }
                 });
+
 
 
 
@@ -159,16 +172,31 @@ public class table_form_2_single extends AppCompatActivity {
 
                 Log.i("table",table);
 
+                if(date==null){
+                    tv_validation.setText("It's Time to Select a Date !");
+                }else {
+                    //insert into database
+                    TableD table = new TableD(userId, tableId, for_name, phone_num, total, amount, date);
+                    dao.insert(table).addOnSuccessListener(suc -> {
+                        showToast();
 
-                //insert into database
-                TableD table = new TableD(userId,tableId,for_name,phone_num,total,amount,date);
-                dao.insert(table).addOnSuccessListener(suc->{
-                    Toast.makeText(getApplicationContext(),"Record is inserted",Toast.LENGTH_SHORT).show();
-                }).addOnFailureListener(er->{
-                    Toast.makeText(getApplicationContext(),""+er.getMessage(),Toast.LENGTH_SHORT).show();
-                });
+                        //redirect to confirmation page
+                        Intent intent1 = new Intent(getApplicationContext(),Confirmation.class);
+
+                        intent1.putExtra("tableId",tableId.toString());
+                        intent1.putExtra("for",for_name.toString());
+                        intent1.putExtra("phone",phone_num.toString());
+                        intent1.putExtra("total",total.toString());
+                        intent1.putExtra("date",date.toString());
 
 
+                        getApplicationContext().startActivity(intent1);
+
+                    }).addOnFailureListener(er -> {
+                        Toast.makeText(getApplicationContext(), "" + er.getMessage(), Toast.LENGTH_SHORT).show();
+                    });
+
+                }
             }
         });
 
@@ -191,6 +219,31 @@ public class table_form_2_single extends AppCompatActivity {
         MainActivity.closeDrawer(drawerLayout);
 
 
+    }
+
+    //custom toast message
+
+    public void showToast() {
+        LayoutInflater inflater = getLayoutInflater();
+        View layout = inflater.inflate(R.layout.toast_layout, (ViewGroup) findViewById(R.id.toast_message));
+
+
+        TextView toastText = layout.findViewById(R.id.toast_text);
+        ImageView toastImage = layout.findViewById(R.id.toast_image);
+
+        toastText.setText("Table Reserved On "+date);
+
+        toastImage.setImageResource(R.drawable.emote);
+
+        Toast toast = new Toast(getApplicationContext());
+        toast.setGravity(Gravity.CENTER, 0, 0);
+        toast.setDuration(Toast.LENGTH_LONG*5);
+
+
+        toast.setView(layout);
+
+
+        toast.show();
     }
 
 

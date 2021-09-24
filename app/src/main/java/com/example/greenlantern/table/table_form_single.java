@@ -1,10 +1,14 @@
 package com.example.greenlantern.table;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -42,6 +46,7 @@ public class table_form_single extends AppCompatActivity {
     TextView tableID;
     String userId;
 
+    String errorMessage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -133,20 +138,29 @@ public class table_form_single extends AppCompatActivity {
             public void onClick(View view) {
             //form validation
                 if(TextUtils.isEmpty(pt_for.getText().toString())){
-                    Toast.makeText(getApplicationContext(),"For Can not be empty!",Toast.LENGTH_SHORT).show();
+                    errorMessage = "For Can not be empty!";
+                    showToast(errorMessage);
+
             }
             else if(TextUtils.isEmpty(pt_phone.getText().toString())){
-                    Toast.makeText(getApplicationContext(),"Phone Number Can not be empty!",Toast.LENGTH_SHORT).show();
+                errorMessage = "Phone Number Can not be empty!";
+                    showToast(errorMessage);
                 }
                 else if(pt_for.getText().toString().matches(".*\\d.*")){
-                    Toast.makeText(getApplicationContext(),"Name Can not be A number !",Toast.LENGTH_SHORT).show();
+                    errorMessage = "Name Can not be A number !";
+                    showToast(errorMessage);
+
                 }
 
                 else if(pt_for.getText().toString().length()>20){
-                    Toast.makeText(getApplicationContext(),"Name Must be 1 to 20 Character !",Toast.LENGTH_SHORT).show();
+                    errorMessage = "Name Must be 1 to 20 Character !";
+                    showToast(errorMessage);
+
                 }
                 else if(pt_phone.getText().toString().length()!=10){
-                    Toast.makeText(getApplicationContext(),"Phone Number Must be 10 Numbers !",Toast.LENGTH_SHORT).show();
+                    errorMessage ="Phone Number Must Include 10 Numbers !";
+                    showToast(errorMessage);
+
                 }
             else{
                     nextPage(view);
@@ -224,6 +238,31 @@ public class table_form_single extends AppCompatActivity {
         MainActivity.closeDrawer(drawerLayout);
 
 
+    }
+
+    //custom toast message
+
+    public void showToast(String errorMessage) {
+        LayoutInflater inflater = getLayoutInflater();
+        View layout = inflater.inflate(R.layout.toast_layout, (ViewGroup) findViewById(R.id.toast_message));
+
+
+        TextView toastText = layout.findViewById(R.id.toast_text);
+        ImageView toastImage = layout.findViewById(R.id.toast_image);
+
+        toastText.setText(errorMessage);
+
+        toastImage.setImageResource(R.drawable.emote);
+
+        Toast toast = new Toast(getApplicationContext());
+        toast.setGravity(Gravity.CENTER, 0, 0);
+        toast.setDuration(Toast.LENGTH_LONG*471);
+
+
+        toast.setView(layout);
+
+
+        toast.show();
     }
 
 

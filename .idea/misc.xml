@@ -18,10 +18,12 @@
         <entry key="..\:/demo/GreenLantern/app/src/main/res/drawable/ic_arrow_down.xml" value="0.290625" />
         <entry key="..\:/demo/GreenLantern/app/src/main/res/drawable/ic_user.xml" value="0.290625" />
         <entry key="..\:/demo/GreenLantern/app/src/main/res/layout/activity_booking.xml" value="0.17135416666666667" />
+        <entry key="..\:/demo/GreenLantern/app/src/main/res/layout/activity_confirmation.xml" value="0.2171875" />
         <entry key="..\:/demo/GreenLantern/app/src/main/res/layout/activity_delete_form.xml" value="0.23278985507246377" />
+        <entry key="..\:/demo/GreenLantern/app/src/main/res/layout/activity_main.xml" value="0.2171875" />
         <entry key="..\:/demo/GreenLantern/app/src/main/res/layout/activity_table.xml" value="0.2653985507246377" />
         <entry key="..\:/demo/GreenLantern/app/src/main/res/layout/activity_table_booking.xml" value="0.25" />
-        <entry key="..\:/demo/GreenLantern/app/src/main/res/layout/activity_table_form2_single.xml" value="0.22192028985507245" />
+        <entry key="..\:/demo/GreenLantern/app/src/main/res/layout/activity_table_form2_single.xml" value="0.25" />
         <entry key="..\:/demo/GreenLantern/app/src/main/res/layout/activity_table_form_single.xml" value="0.264" />
         <entry key="..\:/demo/GreenLantern/app/src/main/res/layout/activity_update_form.xml" value="0.264" />
         <entry key="..\:/demo/GreenLantern/app/src/main/res/layout/background.xml" value="0.23278985507246377" />
