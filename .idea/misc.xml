@@ -13,10 +13,12 @@
         <entry key="..\:/Programming project/android std project/app/src/main/res/layout/main_nav_drawer.xml" value="0.25" />
         <entry key="..\:/Programming project/android std project/app/src/main/res/layout/main_toolbar.xml" value="0.25" />
         <entry key="..\:/demo/GreenLantern/app/src/main/res/drawable/box.xml" value="0.290625" />
+        <entry key="..\:/demo/GreenLantern/app/src/main/res/drawable/emote.xml" value="0.28615384615384615" />
         <entry key="..\:/demo/GreenLantern/app/src/main/res/drawable/ic_arrow.xml" value="0.290625" />
         <entry key="..\:/demo/GreenLantern/app/src/main/res/drawable/ic_arrow_down.xml" value="0.290625" />
         <entry key="..\:/demo/GreenLantern/app/src/main/res/drawable/ic_user.xml" value="0.290625" />
         <entry key="..\:/demo/GreenLantern/app/src/main/res/layout/activity_booking.xml" value="0.17135416666666667" />
+        <entry key="..\:/demo/GreenLantern/app/src/main/res/layout/activity_delete_form.xml" value="0.23278985507246377" />
         <entry key="..\:/demo/GreenLantern/app/src/main/res/layout/activity_table.xml" value="0.2653985507246377" />
         <entry key="..\:/demo/GreenLantern/app/src/main/res/layout/activity_table_booking.xml" value="0.25" />
         <entry key="..\:/demo/GreenLantern/app/src/main/res/layout/activity_table_form2_single.xml" value="0.22192028985507245" />
@@ -24,6 +26,7 @@
         <entry key="..\:/demo/GreenLantern/app/src/main/res/layout/activity_update_form.xml" value="0.264" />
         <entry key="..\:/demo/GreenLantern/app/src/main/res/layout/item.xml" value="0.25" />
         <entry key="..\:/demo/GreenLantern/app/src/main/res/layout/item_drawer_main.xml" value="0.25885416666666666" />
+        <entry key="..\:/demo/GreenLantern/app/src/main/res/layout/toast_layout.xml" value="0.23278985507246377" />
         <entry key="..\:/demo/GreenLantern/app/src/main/res/menu/option_menu.xml" value="0.27447916666666666" />
       </map>
     </option>

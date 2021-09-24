@@ -8,14 +8,19 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.greenlantern.Booking;
 import com.example.greenlantern.MainActivity;
 import com.example.greenlantern.MainAdapter;
 import com.example.greenlantern.R;
@@ -31,10 +36,13 @@ public class Update_form extends AppCompatActivity {
 
     TextView tableId,tableName,tableDate,tablePhone,tableTotal;
     EditText updateName,updatePhoneNum;
-    Button btn_update;
+    Button btn_update,btn_back;
 
     //database ref for data update
     DatabaseReference db;
+
+
+
 
 
     @Override
@@ -74,6 +82,8 @@ public class Update_form extends AppCompatActivity {
         updateName = findViewById(R.id.etUpdateName);
         updatePhoneNum =findViewById(R.id.etUpdateNumber);
         btn_update =findViewById(R.id.btn_update);
+        btn_back=findViewById(R.id.btn_back_booking);
+
 
         //set values
         tableId.setText(table);
@@ -89,18 +99,43 @@ public class Update_form extends AppCompatActivity {
         btn_update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.i("name",updateName.toString());
-                Log.i("name",updatePhoneNum.toString());
+                Log.i("name",updateName.getText().toString());
+                Log.i("name",updatePhoneNum.getText().toString());
 
-                //update database
 
-                db.child(key).child("forName").setValue(updateName.getText().toString());
-                db.child(key).child("phoneNum").setValue(updatePhoneNum.getText().toString());
-                Toast.makeText(getApplicationContext(),"Details Update Successfully",Toast.LENGTH_SHORT).show();
+                if(TextUtils.isEmpty(updateName.getText().toString())){
+                    Toast.makeText(getApplicationContext(),"For Can not be empty!",Toast.LENGTH_SHORT).show();
+                }
+                else if(TextUtils.isEmpty(updatePhoneNum.getText().toString())){
+                    Toast.makeText(getApplicationContext(),"Phone Number Can not be empty!",Toast.LENGTH_SHORT).show();
+                }
+                else if(updateName.getText().toString().matches(".*\\d.*")){
+                    Toast.makeText(getApplicationContext(),"Name Can not be A number !",Toast.LENGTH_SHORT).show();
+                }
 
+                else if(updateName.getText().toString().length()>20){
+                    Toast.makeText(getApplicationContext(),"Name Must be 1 to 20 Character !",Toast.LENGTH_SHORT).show();
+                }
+                else if(updatePhoneNum.getText().toString().length()!=10){
+                    Toast.makeText(getApplicationContext(),"Phone Number Must be 10 Numbers !",Toast.LENGTH_SHORT).show();
+                }else {
+                    //update database
+
+                    db.child(key).child("forName").setValue(updateName.getText().toString());
+                    db.child(key).child("phoneNum").setValue(updatePhoneNum.getText().toString());
+                    //Toast.makeText(getApplicationContext(), "Details Update Successfully", Toast.LENGTH_SHORT).show();
+                    showToast();
+
+                }
             }
         });
 
+
+        btn_back.setOnClickListener(view -> {
+           Log.i("btn","clicked");
+           Intent intents = new Intent(this, tableBooking.class);
+           startActivity(intents);
+        });
 
 
 
@@ -123,9 +158,30 @@ public class Update_form extends AppCompatActivity {
 
     }
 
-    public void back(View view){
-        finish();
+    //custom toast message
+
+    public void showToast() {
+        LayoutInflater inflater = getLayoutInflater();
+        View layout = inflater.inflate(R.layout.toast_layout, (ViewGroup) findViewById(R.id.toast_message));
+
+        TextView toastText = layout.findViewById(R.id.toast_text);
+        ImageView toastImage = layout.findViewById(R.id.toast_image);
+
+        toastText.setText("Details Updated Successfully!");
+        toastImage.setImageResource(R.drawable.emote);
+
+        Toast toast = new Toast(getApplicationContext());
+        toast.setGravity(Gravity.CENTER, 0, 0);
+        toast.setDuration(Toast.LENGTH_LONG*3);
+
+
+        toast.setView(layout);
+
+
+        toast.show();
     }
+
+
 
     @Override
     protected void onPause(){

@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+
+
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -7,6 +12,8 @@
     app:cardElevation="8dp"
     app:cardCornerRadius="8dp"
     android:layout_margin="16dp">
+
+
 
     <TextView
         android:layout_width="20dp"
@@ -18,11 +25,15 @@
         android:textAlignment="center"
         tools:ignore="RtlCompat" />
 
+
+
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="338dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+
+        >
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -33,19 +44,25 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Name :"
+                android:text="Name  :"
                 android:textColor="@color/black"
                 android:textSize="26sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                android:layout_marginRight="7dp"
+
+
+                />
 
             <TextView
                 android:id="@+id/tvName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
+                android:layout_marginLeft="9dp"
                 android:text="Arya"
                 android:textColor="@color/black"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+
+                />
 
         </LinearLayout>
 
@@ -58,10 +75,12 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Date :"
+                android:text="Date    :"
                 android:textColor="@color/black"
                 android:textSize="26sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                android:layout_marginRight="10dp"
+                />
 
             <TextView
                 android:id="@+id/tvdate"
@@ -73,6 +92,7 @@
                 android:textSize="20sp" />
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -82,17 +102,19 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Total : "
+                android:text="Total   : "
                 android:textColor="@color/black"
                 android:textSize="26sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                android:layout_marginRight="2dp"
+                />
 
             <TextView
                 android:id="@+id/tvtotal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
-                android:text=""
+                android:text="Rs.4800.00"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
 
@@ -107,10 +129,12 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Table :"
+                android:text="Table  :"
                 android:textColor="@color/black"
                 android:textSize="26sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                android:layout_marginRight="8dp"
+                />
 
             <TextView
                 android:id="@+id/tvtable"
@@ -122,7 +146,6 @@
                 android:textSize="20sp" />
 
         </LinearLayout>
-
 
 
     </LinearLayout>

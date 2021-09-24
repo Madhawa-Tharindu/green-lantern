@@ -35,10 +35,14 @@ public class tableBooking extends AppCompatActivity {
     RecyclerView recyclerView2;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_table_booking);
+
+        Intent intent = getIntent();
+
         //assign variable
 
         drawerLayout = findViewById(R.id.drawer_layout);
@@ -70,9 +74,11 @@ public class tableBooking extends AppCompatActivity {
         tableAdapter =new tableAdapter(this,list);
         recyclerView2.setAdapter(tableAdapter);
 
+        //fetch data for the recycleview
         db.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+
                 for(DataSnapshot dataSnapshot:snapshot.getChildren()){
                     TableD table =dataSnapshot.getValue(TableD.class);
                     if(table.getUserId().equals("1")) {
@@ -80,9 +86,13 @@ public class tableBooking extends AppCompatActivity {
                         list.add(table);
                         Log.i("Key",table.getKey());
                     }
+
+
                 }
 
                 tableAdapter.notifyDataSetChanged();
+
+
             }
 
             @Override
@@ -102,7 +112,7 @@ public class tableBooking extends AppCompatActivity {
 
 
     }
-    Intent intent = getIntent();
+
 
 
 }

@@ -28,6 +28,8 @@ public class Booking extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_booking);
 
+
+        Intent intent =getIntent();
         //assign variable
 
         drawerLayout = findViewById(R.id.drawer_layout);

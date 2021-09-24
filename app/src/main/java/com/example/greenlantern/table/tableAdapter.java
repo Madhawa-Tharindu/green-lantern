@@ -27,6 +27,7 @@ public class tableAdapter extends RecyclerView.Adapter<tableAdapter.TableViewHol
 
 
 
+
     public tableAdapter(Context context, ArrayList<TableD> list) {
         this.context = context;
         this.list = list;
@@ -37,7 +38,6 @@ public class tableAdapter extends RecyclerView.Adapter<tableAdapter.TableViewHol
     public TableViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View v= LayoutInflater.from(context).inflate(R.layout.item,parent,false);
-
         return new TableViewHolder(v);
     }
 
@@ -48,6 +48,7 @@ public class tableAdapter extends RecyclerView.Adapter<tableAdapter.TableViewHol
         holder.date.setText(table.getReservedDate());
         holder.total.setText(table.getTotal());
         holder.table.setText(table.getTableNo());
+
 
 
         //for the update and delete
@@ -71,14 +72,19 @@ public class tableAdapter extends RecyclerView.Adapter<tableAdapter.TableViewHol
 
                         context.startActivity(intent);
                         break;
-
+                    //remove data
                     case R.id.menu_remove:
 
 
                         Log.i("Removekey",String.valueOf(table.getKey()));
 
+                        
 
-                        DAOETable dao=new DAOETable();
+
+                        /*
+                       DAOETable dao=new DAOETable();
+
+
                         dao.remove(table.getKey()).addOnSuccessListener(suc->
                         {
                             Toast.makeText(context, "Reservation is removed", Toast.LENGTH_SHORT).show();
@@ -92,6 +98,8 @@ public class tableAdapter extends RecyclerView.Adapter<tableAdapter.TableViewHol
                         {
                             Toast.makeText(context, ""+er.getMessage(), Toast.LENGTH_SHORT).show();
                         });
+
+                         */
 
                         break;
                 }
@@ -123,4 +131,7 @@ public class tableAdapter extends RecyclerView.Adapter<tableAdapter.TableViewHol
 
         }
     }
+
+
+
 }
