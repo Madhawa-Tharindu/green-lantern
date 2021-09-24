@@ -78,7 +78,11 @@ public class tableAdapter extends RecyclerView.Adapter<tableAdapter.TableViewHol
 
                         Log.i("Removekey",String.valueOf(table.getKey()));
 
-                        
+                        Intent intent1 = new Intent(context,deleteForm.class);
+
+                        intent1.putExtra("deleteKey", String.valueOf(table.getKey()));
+                        intent1.putExtra("date",table.getReservedDate());
+                        context.startActivity(intent1);
 
 
                         /*
