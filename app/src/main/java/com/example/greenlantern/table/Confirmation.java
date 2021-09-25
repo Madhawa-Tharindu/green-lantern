@@ -94,7 +94,7 @@ public class Confirmation extends AppCompatActivity {
 
     public void myBooking(View view){
         Intent intent1 = new Intent(getApplicationContext(),tableBooking.class);
-        getApplicationContext().startActivity(intent1);
+        startActivity(intent1);
     }
 
 }
