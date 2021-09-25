@@ -190,7 +190,7 @@ public class table_form_2_single extends AppCompatActivity {
                         intent1.putExtra("date",date.toString());
 
 
-                        getApplicationContext().startActivity(intent1);
+                        startActivity(intent1);
 
                     }).addOnFailureListener(er -> {
                         Toast.makeText(getApplicationContext(), "" + er.getMessage(), Toast.LENGTH_SHORT).show();

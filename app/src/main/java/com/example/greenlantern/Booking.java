@@ -54,7 +54,7 @@ public class Booking extends AppCompatActivity {
     }
 
     public void tableBooking(View view){
-        Intent intent = new Intent(this, tableBooking.class);
+        Intent intent = new Intent(getApplicationContext(), tableBooking.class);
         startActivity(intent);
     }
 

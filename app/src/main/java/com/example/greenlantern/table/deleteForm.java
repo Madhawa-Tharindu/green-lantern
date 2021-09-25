@@ -51,7 +51,7 @@ public class deleteForm extends AppCompatActivity {
 
             showToast();
             Intent intent1 = new Intent(getApplicationContext(),tableBooking.class);
-            this.startActivity(intent1);
+            startActivity(intent1);
         });
 
 
