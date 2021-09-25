@@ -31,10 +31,10 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-                android:id="@+id/imageView3"
+                android:id="@+id/img_table"
                 android:layout_width="207dp"
                 android:layout_height="149dp"
-                android:src="@drawable/singletable"
+                android:src="@drawable/single"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

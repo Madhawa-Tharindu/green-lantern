@@ -47,6 +47,7 @@ public class table_form_single extends AppCompatActivity {
     String userId;
 
     String errorMessage;
+    ImageView table_img;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +63,7 @@ public class table_form_single extends AppCompatActivity {
         pt_phone=findViewById(R.id.pt_Phone);
         next=findViewById(R.id.btn_next);
         tableID =findViewById(R.id.tv_table_id);
+        table_img =findViewById(R.id.img_table);
         //set values
         forName = pt_for.getText().toString();
 
@@ -121,16 +123,20 @@ public class table_form_single extends AppCompatActivity {
             tv_table_id.setText("TB006");
             tv_amount_value.setText("4");
             et_total.setText("Rs.4800.00");
+            table_img.setImageResource(R.drawable.dual);
         }
         else if(table_id==R.id.tb007){
             tv_table_id.setText("TB007");
             tv_amount_value.setText("4");
             et_total.setText("Rs.4800.00");
+            table_img.setImageResource(R.drawable.dual);
+
         }
         else if(table_id==R.id.tb008){
             tv_table_id.setText("TB008");
             tv_amount_value.setText("4");
             et_total.setText("Rs.4800.00");
+            table_img.setImageResource(R.drawable.dual);
         }
 
         next.setOnClickListener(new View.OnClickListener() {
