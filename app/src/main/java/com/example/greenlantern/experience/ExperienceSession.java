@@ -125,7 +125,7 @@ public class ExperienceSession extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Members are required", Toast.LENGTH_SHORT).show();
                 }
                 else if(Integer.parseInt(et_res_members.getText().toString()) > 5) {
-                    Toast.makeText(getApplicationContext(), "5 members maximum", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Maximum 5 members", Toast.LENGTH_SHORT).show();
                 }
                 else if(TextUtils.isEmpty(et_res_mobile.getText().toString())) {
                     Toast.makeText(getApplicationContext(), "Mobile number required", Toast.LENGTH_SHORT).show();
