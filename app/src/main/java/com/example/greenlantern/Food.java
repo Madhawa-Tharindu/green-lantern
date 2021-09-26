@@ -51,6 +51,7 @@ public class Food extends AppCompatActivity {
         //set adapter
         recyclerView.setAdapter(new MainAdapter(this,MainActivity.arrayList));
         //imageslider
+        //imageslider
         setImage_slider();
         ShopOpen();
 
