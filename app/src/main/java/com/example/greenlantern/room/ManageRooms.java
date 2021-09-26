@@ -185,7 +185,7 @@ public class ManageRooms extends AppCompatActivity {
                             .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialogInterface, int i) {
-
+                                       //get position
                                     final String idd = user.get(position).getRoomId();
                                     FirebaseDatabase.getInstance().getReference("ReservedRooms").child(idd).removeValue();
                                     //remove function not written
