@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">GreenLantern</string>
+
     <string name="tv_experience">Experience</string>
     <string name="btn_experience_explore">Explore</string>
     <string name="btn_pool_select">SWIMMING</string>
@@ -31,5 +32,12 @@
     <string name="tv_res_remove_heading">Delete Session</string>
     <string name="btn_back">Back</string>
     <string name="experience_explore_desc">Hotel Green Lantern provide customers an opportunity to engage in fitness and leisure activities. These include swimming pools, fully equipped gymnasium and tennis courts providing customers wide range of leisure activities with premium facilities</string>
-    <string name="session_prices">Gymnasium - Rs. 1500 per session\nSwimming pool - Rs. 1200 per session\nTennis - Rs.1000 per session</string>
+
+    <string name="select">"Select Your Favourite Table"</string>
+    <string name="amount_guest">Amount of guest</string>
+    <string name="tv_table_name">Table ID : </string>
+    <string name="btn_reserve">Reserve Table</string>
+
+
+
 </resources>
