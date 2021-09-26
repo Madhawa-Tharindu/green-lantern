@@ -10,6 +10,27 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GreenLantern">
         <activity
+            android:name=".experience.ExperienceReservations"
+            android:exported="true" />
+        <activity
+            android:name=".experience.ExperienceUpdateReservation"
+            android:exported="true" />
+        <activity
+            android:name=".experience.ExperienceRemoveReservation"
+            android:exported="true" />
+        <activity
+            android:name=".experience.ExperienceReservationsAdapter"
+            android:exported="true" />
+        <activity
+            android:name=".experience.ExperienceSession"
+            android:exported="true" />
+        <activity
+            android:name=".experience.ExperienceSessionReserve"
+            android:exported="true" />
+        <activity
+            android:name=".experience.ExperienceSelectExp"
+            android:exported="true" />
+        <activity
             android:name=".Booking"
             android:exported="true" />
         <activity

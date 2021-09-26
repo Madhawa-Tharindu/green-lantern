@@ -1,3 +1,35 @@
 <resources>
     <string name="app_name">GreenLantern</string>
+    <string name="tv_experience">Experience</string>
+    <string name="btn_experience_explore">Explore</string>
+    <string name="btn_pool_select">SWIMMING</string>
+    <string name="tv_pool_description">Adults and kids pool\nJacuzzi\nSwim suit shop</string>
+    <string name="btn_gym_select">GYM</string>
+    <string name="tv_gym_description">Latest fitness gear\nProfessional trainers\nCryo room</string>
+    <string name="btn_tennis_select">TENNIS</string>
+    <string name="tv_tennis_description">High quality courts\nHigh quality tennis gear\nMerch store</string>
+    <string name="tv_res_name">Name</string>
+    <string name="tv_res_members">Members</string>
+    <string name="tv_res_mobile">Mobile</string>
+    <string name="et_res_name" />
+    <string name="tv_res_date">Date</string>
+    <string name="btn_res_next">Next</string>
+    <string name="btn_res_confirm">Reserve</string>
+    <string name="tv_res_date_message">(Reservations upto 14 days ahead)</string>
+    <string name="res_remove_confirmation">Are you sure ?</string>
+    <string name="res_remove_delete">Delete</string>
+    <string name="res_remove_cancel">Back</string>
+    <string name="tv_res_update_session_id_label">Session ID</string>
+    <string name="tv_res_update_date_label">Session Date</string>
+    <string name="tv_res_update_name_label">Name</string>
+    <string name="tv_res_update_members_tabel">Members</string>
+    <string name="tv_res_update_mobile_label">Mobile</string>
+    <string name="tv_res_update_total_label">Total</string>
+    <string name="tv_res_update_total" />
+    <string name="btn_res_update">Update</string>
+    <string name="tv_res_update_session">Update Session</string>
+    <string name="tv_res_remove_heading">Delete Session</string>
+    <string name="btn_back">Back</string>
+    <string name="experience_explore_desc">Hotel Green Lantern provide customers an opportunity to engage in fitness and leisure activities. These include swimming pools, fully equipped gymnasium and tennis courts providing customers wide range of leisure activities with premium facilities</string>
+    <string name="session_prices">Gymnasium - Rs. 1500 per session\nSwimming pool - Rs. 1200 per session\nTennis - Rs.1000 per session</string>
 </resources>
