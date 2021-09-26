@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">GreenLantern</string>
+    <string name="select">"Select Your Favourite Table"</string>
+    <string name="amount_guest">Amount of guest</string>
+    <string name="tv_table_name">Table ID : </string>
+    <string name="btn_reserve">Reserve Table</string>
+
+
 </resources>

@@ -10,7 +10,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.TextView;
+
+import com.example.greenlantern.table.table_form_single;
 
 public class Table extends AppCompatActivity {
 
@@ -18,7 +19,7 @@ public class Table extends AppCompatActivity {
     DrawerLayout drawerLayout;
     ImageView btMenu;
     RecyclerView recyclerView;
-
+    String userId = "1";
 
 
     @Override
@@ -47,6 +48,19 @@ public class Table extends AppCompatActivity {
         });
 
     }
+
+
+    public void CheckTable(View view){
+
+
+        Intent intent = new Intent(this, table_form_single.class);
+        intent.putExtra("table",view.getId());
+        intent.putExtra("tableId","TB001");
+        intent.putExtra("userId",userId);
+        startActivity(intent);
+    }
+
+
 
     @Override
     protected void onPause(){
