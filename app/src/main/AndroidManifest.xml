@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.greenlantern">
 
     <application
@@ -9,6 +10,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GreenLantern">
+        <activity
+            android:name=".table.Confirmation"
+            android:exported="true" />
+        <activity
+            android:name=".table.deleteForm"
+            android:exported="true" />
+        <activity
+            android:name=".table.Update_form"
+            android:exported="true" />
+        <activity
+            android:name=".table.tableBooking"
+            android:exported="true" />
+        <activity
+            android:name=".table.table_form_2_single"
+            android:exported="true" />
+        <activity
+            android:name=".table.table_form_single"
+            android:exported="true"
+            android:parentActivityName=".Table" />
         <activity
             android:name=".Booking"
             android:exported="true" />

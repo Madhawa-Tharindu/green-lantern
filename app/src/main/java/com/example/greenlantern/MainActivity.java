@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     DrawerLayout drawerLayout;
     ImageView btMenu;
     RecyclerView recyclerView;
-    static ArrayList<String> arrayList = new ArrayList<>();
+    public static ArrayList<String> arrayList = new ArrayList<>();
     MainAdapter adapter;
 
     public static void closeDrawer(DrawerLayout drawerLayout) {
