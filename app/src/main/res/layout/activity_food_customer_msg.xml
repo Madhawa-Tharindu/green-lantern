@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/drawer_layout"
+    tools:context=".food.Food_CustomerMsg">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            layout="@layout/main_toolbar"/>
+
+
+        <ImageView
+            android:id="@+id/imageview"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/rice"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"/>
+
+
+        <EditText
+            android:id="@+id/name"
+            android:layout_margin="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:hint="Name"/>
+
+        <EditText
+            android:id="@+id/date"
+            android:layout_margin="20dp"
+            android:layout_width="match_parent"
+            android:enabled="false"
+            android:textColor="@color/black"
+            android:layout_height="wrap_content"
+            android:hint="Date"/>
+
+        <EditText
+            android:id="@+id/note"
+            android:layout_margin="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:lines="5"
+            android:hint="Write your Message Here"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hotline"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:layout_marginBottom="20dp"
+            android:textColor="@color/darkred"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="+94110110119"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:layout_marginBottom="20dp"
+            android:textColor="@color/black"/>
+
+        <ProgressBar
+            android:id="@+id/progress_circular"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="10dp"
+            android:visibility="gone"
+            android:layout_gravity="center"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Submit"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/green_200" />
+
+
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity ="start"
+        android:background="@color/white">
+
+        <include layout="@layout/main_nav_drawer" />
+
+    </RelativeLayout>
+
+</androidx.drawerlayout.widget.DrawerLayout>

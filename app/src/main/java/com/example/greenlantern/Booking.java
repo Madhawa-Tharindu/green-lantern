@@ -1,6 +1,7 @@
 package com.example.greenlantern;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -12,7 +13,9 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+
 import com.example.greenlantern.table.tableBooking;
+
 
 public class Booking extends AppCompatActivity {
 
@@ -20,6 +23,7 @@ public class Booking extends AppCompatActivity {
     DrawerLayout drawerLayout;
     ImageView btMenu;
     RecyclerView recyclerView;
+    AppCompatButton btn_foodorder;
 
 
 
@@ -35,6 +39,7 @@ public class Booking extends AppCompatActivity {
         drawerLayout = findViewById(R.id.drawer_layout);
         btMenu = findViewById(R.id.bt_menu);
         recyclerView = findViewById(R.id.recycle_view);
+        btn_foodorder = findViewById(R.id.btn_foodorder);
 
         //set layout manager
 
@@ -51,11 +56,13 @@ public class Booking extends AppCompatActivity {
         });
 
 
+
     }
 
     public void tableBooking(View view){
         Intent intent = new Intent(getApplicationContext(), tableBooking.class);
         startActivity(intent);
+
     }
 
     @Override

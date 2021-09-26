@@ -3,6 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.greenlantern">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,6 +15,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GreenLantern">
         <activity
+
+            android:name=".food.Food_OrderView"
+            android:exported="true" />
+        <activity
+            android:name=".food.Food_CustomerMsg"
+            android:exported="true" />
+        <activity
+            android:name=".food.Food_ProductDiscription"
+            android:exported="true" />
+        <activity
+            android:name=".food.FoodShop"
+            android:exported="true" />
+        <activity
+
             android:name=".table.Confirmation"
             android:exported="true" />
         <activity
@@ -30,6 +48,7 @@
             android:exported="true"
             android:parentActivityName=".Table" />
         <activity
+
             android:name=".Booking"
             android:exported="true" />
         <activity
