@@ -103,7 +103,7 @@ public class ExperienceUpdateReservation extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Member(s) is required", Toast.LENGTH_SHORT).show();
                 }
                 else if(Integer.parseInt(et_res_update_members.getText().toString()) > 5) {
-                    Toast.makeText(getApplicationContext(), "5 members maximum", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Maximum 5 members", Toast.LENGTH_SHORT).show();
                 }
                 else if(TextUtils.isEmpty(et_res_update_mobile.getText().toString())) {
                     Toast.makeText(getApplicationContext(), "Mobile is required", Toast.LENGTH_SHORT).show();
