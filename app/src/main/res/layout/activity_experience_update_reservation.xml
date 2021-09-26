@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/drawer_layout"
+    tools:context=".experience.ExperienceUpdateReservation">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            layout="@layout/main_toolbar"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:id="@+id/tv_res_update_session"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="@string/tv_res_update_session"
+                android:textColor="@color/black"
+                android:textSize="34sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/divider10"
+                android:layout_width="409dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="20dp"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_res_update_session" />
+
+            <TextView
+                android:id="@+id/tv_res_update_date_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="30dp"
+                android:text="@string/tv_res_update_date_label"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider10" />
+
+            <TextView
+                android:id="@+id/tv_res_update_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginEnd="30dp"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_res_update_date_label"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tv_res_update_date_label"
+                app:layout_constraintTop_toTopOf="@+id/tv_res_update_date_label" />
+
+            <TextView
+                android:id="@+id/tv_res_update_session_id_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="@string/tv_res_update_session_id_label"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="@+id/tv_res_update_date_label"
+                app:layout_constraintTop_toBottomOf="@+id/tv_res_update_date" />
+
+            <TextView
+                android:id="@+id/tv_res_update_session_id"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@+id/tv_res_update_date"
+                app:layout_constraintStart_toStartOf="@+id/tv_res_update_date"
+                app:layout_constraintTop_toTopOf="@+id/tv_res_update_session_id_label" />
+
+            <TextView
+                android:id="@+id/tv_res_update_name_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="@string/tv_res_update_name_label"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="@+id/tv_res_update_session_id_label"
+                app:layout_constraintTop_toBottomOf="@+id/tv_res_update_session_id" />
+
+            <EditText
+                android:id="@+id/et_res_update_name"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="30dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Name"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tv_res_update_session_id"
+                app:layout_constraintTop_toTopOf="@+id/tv_res_update_name_label" />
+
+            <TextView
+                android:id="@+id/tv_res_update_members_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="@string/tv_res_update_members_tabel"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="@+id/tv_res_update_name_label"
+                app:layout_constraintTop_toBottomOf="@+id/et_res_update_name" />
+
+            <EditText
+                android:id="@+id/et_res_update_members"
+                android:layout_width="54dp"
+                android:layout_height="40dp"
+                android:ems="10"
+                android:inputType="number"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="@+id/et_res_update_name"
+                app:layout_constraintTop_toTopOf="@+id/tv_res_update_members_label" />
+
+            <TextView
+                android:id="@+id/tv_res_update_mobile_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="@string/tv_res_update_mobile_label"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="@+id/tv_res_update_members_label"
+                app:layout_constraintTop_toBottomOf="@+id/et_res_update_members" />
+
+            <EditText
+                android:id="@+id/et_res_update_mobile"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="phone"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@+id/et_res_update_name"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/et_res_update_members"
+                app:layout_constraintTop_toTopOf="@+id/tv_res_update_mobile_label" />
+
+            <TextView
+                android:id="@+id/tv_res_update_total_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="@string/tv_res_update_total_label"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="@+id/tv_res_update_mobile_label"
+                app:layout_constraintTop_toBottomOf="@+id/et_res_update_mobile" />
+
+            <TextView
+                android:id="@+id/tv_res_update_total"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/tv_res_update_total"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@+id/et_res_update_mobile"
+                app:layout_constraintStart_toStartOf="@+id/et_res_update_mobile"
+                app:layout_constraintTop_toTopOf="@+id/tv_res_update_total_label" />
+
+            <Button
+                android:id="@+id/btn_res_update"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginTop="40dp"
+                android:backgroundTint="@color/green_200"
+                android:text="@string/btn_res_update"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_res_update_total" />
+
+            <Button
+                android:id="@+id/btn_back"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="60dp"
+                android:backgroundTint="@color/red"
+                android:text="@string/btn_back"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/btn_res_update" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity ="start"
+        android:background="@color/white"
+        >
+
+        <include layout="@layout/main_nav_drawer" />
+
+    </RelativeLayout>
+
+</androidx.drawerlayout.widget.DrawerLayout>
