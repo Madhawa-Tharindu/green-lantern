@@ -121,7 +121,7 @@ public class ExperienceSession extends AppCompatActivity {
                 if(TextUtils.isEmpty(et_res_name.getText().toString())) {
                     Toast.makeText(getApplicationContext(), "Name is required", Toast.LENGTH_SHORT).show();
                 }
-                else if(TextUtils.isEmpty(et_res_members.getText().toString())) {
+                else if(TextUtils.isEmpty(et_res_members.getText().toString()) || Integer.parseInt(et_res_members.getText().toString()) == 0) {
                     Toast.makeText(getApplicationContext(), "Members are required", Toast.LENGTH_SHORT).show();
                 }
                 else if(Integer.parseInt(et_res_members.getText().toString()) > 5) {
