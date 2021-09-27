@@ -99,7 +99,7 @@ public class ExperienceUpdateReservation extends AppCompatActivity {
                 if(TextUtils.isEmpty(et_res_update_name.getText().toString())) {
                     Toast.makeText(getApplicationContext(), "Name is required", Toast.LENGTH_SHORT).show();
                 }
-                else if(TextUtils.isEmpty(et_res_update_members.getText().toString())) {
+                else if(TextUtils.isEmpty(et_res_update_members.getText().toString()) || Integer.parseInt(et_res_update_members.getText().toString()) == 0) {
                     Toast.makeText(getApplicationContext(), "Member(s) is required", Toast.LENGTH_SHORT).show();
                 }
                 else if(Integer.parseInt(et_res_update_members.getText().toString()) > 5) {
