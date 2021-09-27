@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.greenlantern.R;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class ExperienceReservationAdapter extends RecyclerView.Adapter<ExperienceReservationAdapter.ExperienceReservationViewHolder> {
     ArrayList<ExperienceDB> experience_reservations_list;
@@ -29,6 +30,7 @@ public class ExperienceReservationAdapter extends RecyclerView.Adapter<Experienc
     @NonNull
     @Override
     public ExperienceReservationViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        Collections.reverse(experience_reservations_list);
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_experience_reservation, parent, false);
         return new ExperienceReservationViewHolder(v);
     }
